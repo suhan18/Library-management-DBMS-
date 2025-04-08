@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <h1>Admin Dashboard</h1>
+
+  <!-- Admin Dashboard Options -->
+  <section id="admin-options">
+    <button onclick="showSection('book-management')">Add Book</button>
+    <button onclick="showSection('member-management')">Manage Members</button>
+    <button onclick="showSection('manage-fines')">Fine Payments</button>
+    <button onclick="showSection('manage-reservations')">Manage Reservations</button>
+  </section>
+
+  <!-- Book Management Section -->
+  <section id="book-management" style="display: none;">
+    <h2>Book Management</h2>
+
+    <!-- Add New Book -->
+    <h3>Add New Book</h3>
+    <form id="book-form">
+      <label>Title: <input type="text" id="title" required></label><br>
+      <label>Author: <input type="text" id="author" required></label><br>
+      <label>Status: 
+        <select id="status">
+          <option value="Available">Available</option>
+          <option value="Reserved">Reserved</option>
+          <option value="CheckedOut">Checked Out</option>
+        </select>
+      </label><br>
+      <label>Publisher: <input type="text" id="publisher"></label><br>
+      <label>Edition: <input type="text" id="edition"></label><br>
+      <label>ISBN: <input type="text" id="isbn"></label><br>
+      <button type="submit">Add Book</button>
+    </form>
+
+    <!-- Update Book -->
+    <h3>Update Book</h3>
+    <form id="updateBookForm" onsubmit="updateBook(event)">
+      <label>Book Title: <input type="text" id="updateTitle" required></label><br>
+      <label>Author: <input type="text" id="updateAuthor"></label><br>
+      <label>Status: <input type="text" id="updateStatus" required></label><br>
+      <label>Publisher: <input type="text" id="updatePublisher"></label><br>
+      <label>Edition: <input type="text" id="updateEdition"></label><br>
+      <label>ISBN: <input type="text" id="updateISBN"></label><br>
+      <button type="submit">Update Book</button>
+    </form>
+
+    <!-- Delete Book -->
+    <h3>Delete Book</h3>
+    <form id="deleteBookForm">
+      <label>Book ISBN: <input type="text" id="deleteISBN" required></label><br>
+      <button type="submit">Delete Book</button>
+    </form>
+
+    <!-- Books List Section -->
+    <h3>Books List</h3>
+    <ul id="books"></ul>
+  </section>
+
+  <!-- Member Management Section -->
+  <section id="member-management" style="display: none;">
+    <h2>Member Management</h2>
+  
+    <!-- Add New Member -->
+    <h3>Add New Member</h3>
+    <form id="addMemberForm">
+      <label>Name: <input type="text" id="memberName" required></label><br>
+      <label>Email: <input type="email" id="memberEmail" required></label><br>
+      <button type="submit">Add Member</button>
+    </form>
+  
+    <!-- Update Member -->
+    <h3>Update Member</h3>
+    <form id="updateMemberForm">
+      <label>Member ID: <input type="number" id="memberupdateId" required></label><br>
+      <label>Name: <input type="text" id="memberupdateName"></label><br>
+      <label>Email: <input type="email" id="memberupdateEmail"></label><br>
+      <button type="submit">Update Member</button>
+    </form>
+
+    <!-- Delete Member -->
+    <h3>Delete Member</h3>
+    <form id="deleteMemberForm">
+      <label>Member ID: <input type="number" id="deleteMemberId" required></label><br>
+      <button type="submit">Delete Member</button>
+    </form>
+
+    <!-- Member Message Display -->
+    <div id="memberMessage"></div>
+  </section>
+
+  <!-- Fine Payments Section -->
+  <section id="manage-fines" style="display: none;">
+    <h2>Fine Payments</h2>
+    <!-- Fine payments code here -->
+  </section>
+
+  <!-- Manage Reservations Section -->
+  <section id="manage-reservations" style="display: none;">
+    <h2>Manage Reservations</h2>
+    <!-- Reservation management code here -->
+  </section>
+
+  <script src="script.js"></script>
+  <script>
+    function showSection(sectionId) {
+      document.querySelectorAll('section').forEach(section => {
+        section.style.display = 'none';
+      });
+      document.getElementById(sectionId).style.display = 'block';
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!-- DBMS_PROJECT\DBMS_PROJECT\DBMS_PROJECT\index.html-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Library Management System</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <h1>Library Management System</h1>
+
+  <!-- Role Selection Section -->
+  <section id="role-selection">
+    <h2>Select Your Role</h2>
+    <button onclick="selectRole('admin')">Admin</button>
+    <button onclick="selectRole('user')">User</button>
+  </section>
+
+  <!-- Role Selection Logic -->
+  <script>
+    function selectRole(role) {
+      if (role === 'admin') {
+        // Redirect to admin dashboard if admin role is selected
+        window.location.href = 'admin.html';
+      } else if (role === 'user') {
+        // Placeholder for the user interface or a user-specific page
+        window.location.href = 'user.html';
+      }
+    }
+  </script>
+</body>
+</html>

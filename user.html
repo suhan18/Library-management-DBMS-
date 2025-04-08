@@ -1,0 +1,83 @@
+<!-- DBMS_PROJECT\DBMS_PROJECT\DBMS_PROJECT\user.html-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User - Library Management System</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <h1>Welcome, User</h1>
+
+  <!-- Book Search Section -->
+  <section id="book-search">
+    <h2>Which book do you want to borrow?</h2>
+    <form id="searchBookForm">
+      <label for="searchTitle">Book Title:</label>
+      <input type="text" id="searchTitle" placeholder="Enter book title" required>
+
+      <label for="searchAuthor">Author:</label>
+      <input type="text" id="searchAuthor" placeholder="Enter author name" required>
+
+      <!-- Member ID Input -->
+      <label for="memberId">Member ID:</label>
+      <input type="number" id="memberId" placeholder="Your member ID" required>
+
+      <button type="submit">Search and Borrow</button>
+    </form>
+    <div id="searchResults"> <!-- Placeholder for search results -->
+      <p>Search results will appear here.</p>
+    </div>
+  </section>
+  
+  
+  <!-- Reservation Section (Initially Hidden) -->
+  <section id="reservation-section" style="display: none;">
+    <h2>Reservation Options</h2>
+    <div id="reservationDetails">
+      <!-- Reserve button or reservation confirmation details will be displayed here -->
+    </div>
+  </section>
+
+  <!-- Return Book Section -->
+  <h1>Return Book</h1>
+  <form id="return-form">
+    <label for="bookId">Book ID:</label>
+    <input type="number" id="bookId" name="bookId" placeholder="Enter book ID" required><br><br>
+
+    <!-- <label for="memberId">Member ID:</label>
+    <input type="number" id="memberId" name="memberId" placeholder="Enter member ID" required><br><br> -->
+
+    <label for="returnDate">Return Date:</label>
+    <input type="date" id="returnDate" name="returnDate" required><br><br>
+
+    <button type="submit">Return Book</button>
+  </form>
+
+  <div id="message"></div>
+  
+  <!-- Fine Payment Section (Initially Hidden) -->
+  <section id="fine-payment-section" style="display: none;">
+    <h2>Pay Fine</h2>
+    <p id="fineAmount">You have a pending fine of: </p>
+    <button id="payFineButton">Pay Fine</button>
+  </section>
+
+  <!-- Check Reservation Section -->
+  <section id="check-reservation">
+    <h2>Check Your Reservations</h2>
+    <form id="checkReservationForm">
+      <label for="memberIdCheck">Enter Member ID to Check Reservations:</label>
+      <input type="number" id="memberIdCheck" placeholder="Your member ID" required>
+      <button type="submit">Check Reservations</button>
+    </form>
+    <div id="reservationResults"> <!-- Placeholder for reservation results -->
+      <p>Reservation details will appear here.</p>
+    </div>
+  </section>
+
+  <!-- JavaScript file -->
+  <script src="user.js"></script>
+</body>
+</html>
